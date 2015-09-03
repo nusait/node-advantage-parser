@@ -1,6 +1,6 @@
 .DS_Store
-/parsed/*!.gitkeep
-/raw-source/*!.gitkeep
-/staging/*!.gitkeep
-/prod/*!gitkeep
+/parsed/*.json
+/raw-source/*.xml
+/staging/*.json
+/prod/*.json
 /node_modules
