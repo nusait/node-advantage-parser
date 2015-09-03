@@ -16,7 +16,7 @@ function NUhelpVendorTransformer(vendor) {
 
     obj.id = vendor.name[0];
     obj.title = vendor.title[0];
-    obj.category = categoryObj.title[0];
+    obj.category = [categoryObj.title[0]];
     obj.description = vendor.description[0];
     obj.website = vendor.website[0];
     obj.email = vendor.email[0];
@@ -32,6 +32,11 @@ function NUhelpVendorTransformer(vendor) {
             lng: address.longitude[0]
         };
     });
+    var test = _.findWhere(result, {id: obj.id});
+    if (test) {
+        test.category.push(obj.category[0]);
+        return;
+    }
     result.push(obj);
 }
 
