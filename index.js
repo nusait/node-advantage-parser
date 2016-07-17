@@ -14,6 +14,9 @@ function NUhelpVendorTransformer(vendor) {
     var obj = {};
     var categoryObj = this;
 
+    // quick check on vendor.name to eliminate empty entities
+    if(! vendor.name[0]) return;
+
     obj.id = vendor.name[0];
     obj.title = vendor.title[0];
     obj.category = [categoryObj.title[0]];
@@ -40,7 +43,8 @@ function NUhelpVendorTransformer(vendor) {
     result.push(obj);
 }
 
-fetch('http://www.northwestern.edu/uservices/wildcard/advantage_discounts/category/all_mweb.xml')
+//fetch('http://www.northwestern.edu/uservices/wildcard/advantage_discounts/category/all_mweb.xml')
+fetch('http://www.northwestern.edu/wildcard/discounts/category/all_mweb.xml')
     .then(function (res) {
         return res.text();
     }).then(function (xml) {
