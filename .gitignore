@@ -5,3 +5,4 @@
 /staging/*.json
 /prod/*.json
 /node_modules
+.sonar
